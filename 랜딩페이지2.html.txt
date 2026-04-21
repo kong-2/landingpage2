@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영상브랜드 | 전문직 퍼스널 브랜딩 영상 서비스</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: white;
+            border-bottom: 1px solid #f0f0f0;
+            padding: 1rem 2rem;
+            z-index: 100;
+        }
+        
+        header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        header .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #111;
+            letter-spacing: -0.5px;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #666;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            color: #111;
+        }
+        
+        .cta-btn {
+            background: #111;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .cta-btn:hover {
+            background: #333;
+        }
+        
+        /* Hero */
+        .hero {
+            background: white;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+        
+        .hero .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-emoji {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #111;
+            margin-bottom: 1.5rem;
+            line-height: 1.15;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+        }
+        
+        .hero-highlight {
+            display: block;
+            color: #111;
+            font-style: italic;
+            font-weight: 600;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 0.8rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        
+        .cta-btn-lg {
+            background: #111;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            border: 2px solid #111;
+            cursor: pointer;
+        }
+        
+        .cta-btn-lg:hover {
+            background: #333;
+            border-color: #333;
+            transform: translateY(-2px);
+        }
+        
+        .cta-btn-outline {
+            background: transparent;
+            color: #111;
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 2px solid #111;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        
+        .cta-btn-outline:hover {
+            background: #111;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #111;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        
+        section .subtitle {
+            font-size: 0.95rem;
+            color: #999;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+        
+        /* Pain Point Section */
+        .pain-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+        
+        .pain-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 4px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .pain-card::before {
+            content: attr(data-emoji);
+            display: block;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .pain-card:hover {
+            border-color: #111;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+        
+        .pain-card p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+        
+        /* Empathy Section */
+        .empathy-section {
+            background: white;
+            border: 1px solid #f0f0f0;
+            border-left: 4px solid #111;
+            padding: 3rem;
+            border-radius: 4px;
+            margin-bottom: 4rem;
+        }
+        
+        .empathy-section h3 {
+            font-size: 1.3rem;
+            color: #111;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .empathy-section p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .empathy-section blockquote {
+            background: #f9f9f9;
+            border-left: 3px solid #111;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            color: #333;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 0;
+        }
+        
+        /* Insight Box */
+        .insight-box {
+            background: #111;
+            color: white;
+            padding: 3.5rem;
+            border-radius: 4px;
+            text-align: center;
+            margin: 3rem 0;
+            position: relative;
+        }
+        
+        .insight-box::before {
+            content: '💡';
+            display: block;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .insight-box h3 {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .insight-box p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+        }
+        
+        .insight-box strong {
+            font-weight: 700;
+        }
+        
+        /* Solution Section */
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .solution-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 4px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s;
+        }
+        
+        .solution-card::before {
+            content: attr(data-emoji);
+            display: block;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .solution-card:hover {
+            border-color: #111;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+        
+        .solution-card h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #111;
+            font-weight: 700;
+        }
+        
+        .solution-card p {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        /* Why Section */
+        .why-box {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 4px;
+            border: 1px solid #f0f0f0;
+            margin-bottom: 3rem;
+        }
+        
+        .why-box p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .why-box blockquote {
+            background: #f9f9f9;
+            border-left: 3px solid #111;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            color: #333;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 0;
+        }
+        
+        .why-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+        
+        .why-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 4px;
+            border: 1px solid #f0f0f0;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .why-card:hover {
+            border-color: #111;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+        
+        .why-card .emoji {
+            display: inline-block;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .why-card h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #111;
+            font-weight: 700;
+        }
+        
+        .why-card p {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        /* Service Section */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .process-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 4px;
+            border: 1px solid #f0f0f0;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .process-card:hover {
+            border-color: #111;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+        
+        .process-card .emoji {
+            display: block;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .process-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            color: #111;
+            font-weight: 700;
+        }
+        
+        .process-card p {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .service-industries {
+            background: white;
+            padding: 2rem;
+            border-radius: 4px;
+            border: 1px solid #f0f0f0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .service-industries h3 {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: #111;
+            font-weight: 700;
+        }
+        
+        .industries-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .industry-tag {
+            background: #f9f9f9;
+            color: #333;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid #f0f0f0;
+            transition: all 0.2s;
+        }
+        
+        .industry-tag:hover {
+            background: #111;
+            color: white;
+            border-color: #111;
+        }
+        
+        /* Proof Section */
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .proof-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 4px;
+            border: 1px solid #f0f0f0;
+            border-left: 4px solid #111;
+            transition: all 0.3s;
+        }
+        
+        .proof-card::before {
+            content: attr(data-emoji);
+            display: block;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .proof-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+        
+        .proof-category {
+            font-size: 0.75rem;
+            color: #999;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+        
+        .proof-card .name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 1rem;
+        }
+        
+        .proof-card .result {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #111;
+            margin: 1rem 0;
+        }
+        
+        .proof-card p {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 4px;
+            border: 1px solid #f0f0f0;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s;
+        }
+        
+        .faq-item:hover {
+            border-color: #111;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+        
+        .faq-question {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #111;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-toggle {
+            font-size: 1.2rem;
+            color: #666;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.8;
+            margin-top: 1.5rem;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 4px;
+            margin: 4rem 0;
+            position: relative;
+        }
+        
+        .final-cta::before {
+            content: '🎯';
+            display: block;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .final-cta h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            font-size: 2.2rem;
+            line-height: 1.2;
+        }
+        
+        .final-cta p {
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        footer {
+            background: #f9f9f9;
+            color: #666;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header nav {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .cta-btn-lg,
+            .cta-btn-outline {
+                width: 100%;
+            }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">🎬 영상브랜드</div>
+            <nav>
+                <a href="#pain">고민</a>
+                <a href="#solution">해결</a>
+                <a href="#why">왜 영상</a>
+                <a href="#service">서비스</a>
+                <a href="#faq">FAQ</a>
+                <button class="cta-btn">무료 상담</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-emoji">🎥</div>
+            <h1>고객은 서비스를 사는 게 아닙니다.<br><span class="hero-highlight">당신을 삽니다.</span></h1>
+            <p>선택받는 전문가는 실력이 아닌 신뢰로 결정됩니다.</p>
+            <p>지금, 당신의 얼굴이 브랜드가 되어야 합니다.</p>
+            
+            <div class="hero-buttons">
+                <button class="cta-btn-lg">무료 상담 신청하기</button>
+                <button class="cta-btn-outline">더 알아보기</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Point Section -->
+    <section id="pain">
+        <h2>이런 고민,<br>해보신 적 있으신가요?</h2>
+        <p class="subtitle">당신의 상황을 알고 있습니다</p>
+        
+        <div class="pain-cards">
+            <div class="pain-card" data-emoji="📊">
+                <p>"블로그도 써보고, 인스타도 해봤는데... 문의가 없어요"</p>
+            </div>
+            <div class="pain-card" data-emoji="🔗">
+                <p>"저렴하고 실력 있다고 홍보해도 경쟁자와 차별이 안 돼요"</p>
+            </div>
+            <div class="pain-card" data-emoji="💸">
+                <p>"마케팅 업체에 맡겨봤는데 돈만 나가고 효과가 없었어요"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empathy Section -->
+    <section>
+        <div class="empathy-section">
+            <h3>📱 유명한 변호사, 세무사가 스레드에 올린 글</h3>
+            <p>한 번쯤 보신 적 있으시죠?</p>
+
+            <p>팔로워 수만 명의 변호사가 올린 짧은 글 하나.<br>
+            세무사가 찍은 세금 꿀팁 영상 하나.</p>
+
+            <p>그걸 보면서 속으로 이런 생각 하셨을 겁니다.</p>
+
+            <blockquote>
+                "나도 해야 하는데..."<br>
+                "언제 한 번 시작해봐야지..."
+            </blockquote>
+
+            <p>그리고 그 생각, 지금도 그냥 생각으로만 남아있지 않으신가요?</p>
+
+            <h3 style="margin-top: 3rem; font-size: 1.2rem;">🤔 왜 해야 할까요?</h3>
+
+            <p>그 변호사에게 매달 수십 건의 문의가 들어오는 이유는<br>
+            실력이 더 뛰어나서가 아닙니다.</p>
+
+            <blockquote>
+                고객이 이미 그 사람을 <strong>알고 있기 때문</strong>입니다.<br>
+                콘텐츠를 보며 <strong>신뢰가 쌓였기 때문</strong>입니다.
+            </blockquote>
+
+            <p>고객은 검색합니다. 그리고 나오는 사람에게 연락합니다.<br>
+            지금 검색했을 때, 당신은 나오고 있나요?</p>
+
+            <h3 style="margin-top: 3rem; font-size: 1.2rem;">✅ 어떻게 해야 할까요?</h3>
+
+            <p>직접 기획하고, 촬영하고, 편집하고, 올리고...<br>
+            그걸 매주 반복해야 합니다.</p>
+
+            <p>본업만으로도 바쁜데, 현실적으로 쉽지 않죠.<br>
+            <strong>그래서 대신 해드립니다.</strong></p>
+        </div>
+    </section>
+
+    <!-- Insight Section -->
+    <section>
+        <h2>고객은 어떻게<br>전문가를 선택할까요?</h2>
+        <p class="subtitle">선택의 기준이 바뀌었습니다</p>
+
+        <div class="insight-box">
+            <h3>모두가 말합니다. "저렴하고, 실력 있습니다."</h3>
+            <p>그 말이 넘쳐나는 세상에서 고객은 혼란스럽습니다.</p>
+            <p style="margin-top: 2rem; font-size: 1.1rem;"><strong>결국 고객이 선택하는 기준은 단 하나</strong></p>
+            <p style="font-size: 1.1rem; margin-top: 0.5rem;">"이 사람, 믿을 수 있을 것 같다"</p>
+        </div>
+
+        <p style="text-align: center; font-size: 1.05rem; color: #555; margin-top: 3rem;">
+            어떤 서비스를 얼마에 파느냐보다<br>
+            <strong>어떤 사람이 파느냐</strong>가 중요한 시대입니다.
+        </p>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution">
+        <h2>신뢰는 쌓는 것입니다.<br>영상으로.</h2>
+        
+        <p style="font-size: 1rem; color: #666; margin-bottom: 3rem; text-align: center; line-height: 1.8;">
+            퍼스널브랜딩은 자기 자랑이 아닙니다.<br>
+            당신의 전문성과 진정성을 영상으로 꾸준히 보여주는 것,<br>
+            그것이 고객이 먼저 찾아오게 만드는 유일한 방법입니다.
+        </p>
+
+        <div class="solution-grid">
+            <div class="solution-card" data-emoji="🔍">
+                <h3>검색했을 때 당신이 나와야 합니다</h3>
+                <p>고객이 당신을 찾으려는 순간, 화면에 당신의 얼굴과 목소리가 떠올라야 합니다.</p>
+            </div>
+            <div class="solution-card" data-emoji="👥">
+                <h3>영상을 보고 이미 신뢰가 쌓인 고객이 문의해야 합니다</h3>
+                <p>콘텐츠를 통해 당신의 전문성을 느낀 고객만 연락합니다. 그들은 이미 믿고 있습니다.</p>
+            </div>
+            <div class="solution-card" data-emoji="💎">
+                <h3>가격 흥정 없이, 선택받는 전문가가 되어야 합니다</h3>
+                <p>신뢰가 높은 전문가는 가격을 먼저 묻지 않습니다. 고객이 그 가격을 주는 것입니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Reels Section -->
+    <section id="why">
+        <h2>마케팅 방법은 많습니다.</h2>
+        <p class="subtitle">근데 왜 하필 영상일까요?</p>
+
+        <div class="why-box">
+            <p style="font-size: 0.95rem; color: #555; line-height: 1.8; margin-bottom: 1.5rem;">
+                블로그로 SEO 할 수도 있고,<br>
+                네이버 광고 돌릴 수도 있고,<br>
+                명함 뿌릴 수도 있습니다.
+            </p>
+
+            <p style="font-size: 0.95rem; color: #555; line-height: 1.8; margin-bottom: 2rem;">
+                근데 이것들엔 공통적인 한계가 있습니다.
+            </p>
+
+            <blockquote style="background: #f9f9f9; border-left: 3px solid #111; padding: 1.5rem; margin: 2rem 0; color: #333; font-weight: 600; font-size: 1rem; border-radius: 0;">
+                신뢰를 만들지 못합니다.
+            </blockquote>
+
+            <p style="font-size: 0.95rem; color: #555; line-height: 1.8;">
+                텍스트는 읽힙니다. 광고는 스킵됩니다.<br>
+                하지만 영상은 <strong>느껴집니다.</strong>
+            </p>
+
+            <p style="font-size: 0.95rem; color: #555; line-height: 1.8; margin-top: 1.5rem;">
+                말투, 표정, 태도, 전문성.<br>
+                30초 영상 하나로 고객은 이미 당신을 판단합니다.<br>
+                그리고 좋은 인상을 받은 고객은, <strong>알아서 공유합니다.</strong>
+            </p>
+        </div>
+
+        <h3 style="font-size: 1.3rem; color: #111; margin-bottom: 2rem; text-align: center; font-weight: 700;">영상 하나로 세 가지를 동시에 잡습니다</h3>
+
+        <div class="why-cards">
+            <div class="why-card">
+                <div class="emoji">🤝</div>
+                <h3>신뢰</h3>
+                <p>얼굴과 목소리로 전달되는<br>전문가 이미지</p>
+            </div>
+            <div class="why-card">
+                <div class="emoji">🔥</div>
+                <h3>바이럴</h3>
+                <p>알고리즘을 타고 내 고객에게 닿는<br>확산력</p>
+            </div>
+            <div class="why-card">
+                <div class="emoji">⭐</div>
+                <h3>브랜딩</h3>
+                <p>꾸준히 쌓이는<br>나만의 콘텐츠 자산</p>
+            </div>
+        </div>
+
+        <p style="text-align: center; font-size: 1rem; color: #555; margin-top: 3rem; line-height: 1.8;">
+            블로그는 검색한 사람만 봅니다.<br>
+            <strong>영상은 아직 나를 모르는 고객에게도 닿습니다.</strong>
+        </p>
+    </section>
+
+    <!-- Service Section -->
+    <section id="service">
+        <h2>기획부터 영상 제작까지,<br>올인원으로</h2>
+        <p class="subtitle">전문직 전문 영상 브랜딩 서비스</p>
+
+        <h3 style="font-size: 1.2rem; color: #111; margin-bottom: 2rem; margin-top: 3rem; font-weight: 700;">프로세스</h3>
+
+        <div class="process-grid">
+            <div class="process-card">
+                <span class="emoji">🔍</span>
+                <h3>비즈니스 분석</h3>
+                <p>어떤 메시지가 고객을 움직이는지 파악합니다</p>
+            </div>
+            <div class="process-card">
+                <span class="emoji">🎨</span>
+                <h3>브랜딩 설계</h3>
+                <p>당신만의 포지셔닝과 콘텐츠 방향을 설계합니다</p>
+            </div>
+            <div class="process-card">
+                <span class="emoji">🎬</span>
+                <h3>영상 제작</h3>
+                <p>전문직에 맞는 신뢰감 있는 영상을 제작합니다</p>
+            </div>
+            <div class="process-card">
+                <span class="emoji">📈</span>
+                <h3>채널 관리</h3>
+                <p>꾸준한 업로드와 성과 관리까지 함께합니다</p>
+            </div>
+        </div>
+
+        <div class="service-industries">
+            <h3>📌 대상 업종</h3>
+            <div class="industries-list">
+                <span class="industry-tag">⚖️ 변호사</span>
+                <span class="industry-tag">🧾 세무사</span>
+                <span class="industry-tag">👔 노무사</span>
+                <span class="industry-tag">🏛️ 법무사</span>
+                <span class="industry-tag">🌿 한의원</span>
+                <span class="industry-tag">🏥 병의원</span>
+                <span class="industry-tag">💼 컨설턴트</span>
+                <span class="industry-tag">✨ 그 외 전문직</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof Section -->
+    <section>
+        <h2>먼저 시작한 전문가들의 변화</h2>
+        <p class="subtitle">실제 사례를 통해 확인하세요</p>
+
+        <div class="proof-grid">
+            <div class="proof-card" data-emoji="🧾">
+                <div class="proof-category">세무사</div>
+                <div class="name">서울 세무사 A</div>
+                <div class="result">+320%</div>
+                <p><strong>상담 문의</strong> 월 8건 → 34건 (5개월)<br>
+                <strong>계약액</strong> 평균 30% 상향<br><br>
+                "영상 하나하나가 신뢰를 만드는 과정이었습니다"</p>
+            </div>
+            <div class="proof-card" data-emoji="⚖️">
+                <div class="proof-category">변호사</div>
+                <div class="name">부산 변호사 B</div>
+                <div class="result">+280%</div>
+                <p><strong>월 문의</strong> 5건 → 19건 (4개월)<br>
+                <strong>재계약률</strong> 92%<br><br>
+                "이제 고객이 나를 이미 알고 찾아옵니다"</p>
+            </div>
+            <div class="proof-card" data-emoji="💼">
+                <div class="proof-category">컨설턴트</div>
+                <div class="name">CEO 컨설턴트 C</div>
+                <div class="result">+350%</div>
+                <p><strong>월 의뢰</strong> 2건 → 9건 (6개월)<br>
+                <strong>프로젝트 단가</strong> 40% 인상<br><br>
+                "영상이 나의 전문성을 증명해줍니다"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <h2>자주 묻는 질문</h2>
+        <p class="subtitle">마지막 망설임을 제거합니다</p>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>💰 비용이 얼마인가요?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    초기 브랜딩 전략 수립(일회): 200만원<br>
+                    월 패키지(영상 제작 + 채널 관리): 350~500만원<br>
+                    자세한 견적은 무료 상담에서 안내드립니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>📹 촬영은 어떻게 진행되나요?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    저희가 기획부터 촬영, 편집까지 전담합니다.<br>
+                    촬영은 당신의 사무실 또는 저희 스튜디오에서 가능하며,<br>
+                    준비 시간은 최소 15분으로 당신의 일정을 방해하지 않습니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🚗 지방에서도 가능한가요?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    서울, 경기, 인천은 직접 방문 가능합니다.<br>
+                    그 외 지역은 온라인 미팅으로 진행하며,<br>
+                    필요시 지역 촬영팀을 연결해드립니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>⏱️ 영상 효과가 나오는 데 얼마나 걸리나요?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    보통 첫 영상 공개 후 2~4주 내에<br>
+                    상담 문의가 증가하기 시작합니다.<br>
+                    본격적인 효과는 3개월부터 나타나는 경향이 있습니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🤷 제가 직접 해야 하는 건 뭔가요?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    기본적으로 저희가 전담합니다.<br>
+                    다만 촬영 시간 확보, 콘텐츠 주제 검수,<br>
+                    월 1~2회 피드백 미팅만 함께하시면 됩니다.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section>
+        <div class="final-cta">
+            <h2>지금 이 순간에도</h2>
+            <p>당신을 검색한 고객이 있습니다.<br>그 고객에게 무엇을 보여주고 계신가요?</p>
+            <button class="cta-btn-lg">지금 무료 상담 신청하기</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 영상브랜드. 모든 권리 보유.</p>
+        <p>📞 010-XXXX-XXXX | 📧 contact@videobrand.com</p>
+    </footer>
+
+    <script>
+        // FAQ 토글 기능
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
